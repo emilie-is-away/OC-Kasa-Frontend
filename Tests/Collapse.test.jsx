@@ -1,6 +1,7 @@
 import { render, screen, fireEvent } from "@testing-library/react";
 import Collapse from "../src/components/Collapse";
 
+
 test("ouvre et ferme le collapse", () => {
   render(<Collapse title="Description" content="Mon contenu" />);
 

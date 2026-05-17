@@ -2,6 +2,7 @@ import { render, screen } from "@testing-library/react";
 import { MemoryRouter } from "react-router-dom";
 import Card from "../src/components/Card";
 
+
 test("affiche correctement une card", () => {
   const logement = {
     id: "123",
