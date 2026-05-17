@@ -4,6 +4,7 @@ import Carousel from "../components/Carousel.jsx";
 import Collapse from "../components/Collapse.jsx";
 import Rating from "../components/Rating.jsx";
 
+
 export default function Logement() {
   const { id } = useParams();
   const [logement, setLogement] = useState(null);

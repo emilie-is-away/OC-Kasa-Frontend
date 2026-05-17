@@ -1,5 +1,6 @@
 import { useState } from "react";
 
+
 export default function Carousel({ pictures }) {
   const [current, setCurrent] = useState(0);
 
