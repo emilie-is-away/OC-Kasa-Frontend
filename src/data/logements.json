@@ -1,0 +1,9 @@
+[
+  {
+    "id": "1",
+    "title": "Appartement cosy",
+    "rating": "4",
+    "description": "Super logement",
+    "pictures": ["https://picsum.photos/600/400","https://picsum.photos/600/401"]
+  }
+]
