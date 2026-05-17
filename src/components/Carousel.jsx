@@ -1,22 +1,52 @@
 import { useState } from "react";
 
-function Carousel({ pictures }) {
+export default function Carousel({ pictures }) {
   const [current, setCurrent] = useState(0);
 
-  const next = () => setCurrent(current === pictures.length - 1 ? 0 : current + 1);
-  const prev = () => setCurrent(current === 0 ? pictures.length - 1 : current - 1);
+  if (!pictures || pictures.length === 0) return null;
+
+  const next = () => {
+    setCurrent((prev) => (prev + 1) % pictures.length);
+  };
+
+  const prev = () => {
+    setCurrent((prev) => (prev - 1 + pictures.length) % pictures.length);
+  };
 
   return (
-    <div>
-      <img src={pictures[current]} alt="carousel" />
+    <div className="carousel">
+      {/* Image */}
+      <img
+        src={pictures[current]}
+        alt={`slide ${current + 1}`}
+        className="carousel__image"
+      />
+
+      {/* Flèches + compteur uniquement si plusieurs images */}
       {pictures.length > 1 && (
         <>
-          <button onClick={prev}>←</button>
-          <button onClick={next}>→</button>
+          {/* Flèche gauche */}
+          <button
+            className="carousel__arrow carousel__arrow--left"
+            onClick={prev}
+          >
+            <i className="fa-solid fa-chevron-left"></i>
+          </button>
+
+          {/* Flèche droite */}
+          <button
+            className="carousel__arrow carousel__arrow--right"
+            onClick={next}
+          >
+            <i className="fa-solid fa-chevron-right"></i>
+          </button>
+
+          {/* Compteur */}
+          <div className="carousel__counter">
+            {current + 1}/{pictures.length}
+          </div>
         </>
       )}
     </div>
   );
 }
-
-export default Carousel;

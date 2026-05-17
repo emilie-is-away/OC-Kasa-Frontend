@@ -1,12 +1,16 @@
-function Rating({ rating }) {
-  const stars = [1,2,3,4,5];
+export default function Rating({ value }) {
+  const maxStars = 5;
+
   return (
-    <div>
-      {stars.map((star) => (
-        <span key={star}>{star <= rating ? "★" : "☆"}</span>
+    <div className="rating">
+      {[...Array(maxStars)].map((_, index) => (
+        <i
+          key={index}
+          className={`fa-solid fa-star ${
+            index < value ? "active" : "inactive"
+          }`}
+        ></i>
       ))}
     </div>
   );
 }
-
-export default Rating;
