@@ -16,17 +16,17 @@ export default function Carousel({ pictures }) {
 
   return (
     <div className="carousel">
-      {/* Image */}
+      
       <img
         src={pictures[current]}
         alt={`slide ${current + 1}`}
         className="carousel__image"
       />
 
-      {/* Flèches + compteur uniquement si plusieurs images */}
+      {}
       {pictures.length > 1 && (
         <>
-          {/* Flèche gauche */}
+        
           <button
             className="carousel__arrow carousel__arrow--left"
             onClick={prev}
@@ -34,7 +34,6 @@ export default function Carousel({ pictures }) {
             <i className="fa-solid fa-chevron-left"></i>
           </button>
 
-          {/* Flèche droite */}
           <button
             className="carousel__arrow carousel__arrow--right"
             onClick={next}
@@ -42,7 +41,6 @@ export default function Carousel({ pictures }) {
             <i className="fa-solid fa-chevron-right"></i>
           </button>
 
-          {/* Compteur */}
           <div className="carousel__counter">
             {current + 1}/{pictures.length}
           </div>
